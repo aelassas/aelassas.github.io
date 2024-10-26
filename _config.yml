@@ -1,6 +1,6 @@
 title: Akram El Assas - Senior Software Engineer
-author:
-  name: Akram El Assas
+# author:
+#  name: Akram El Assas
 
 # The `>` after `description:` means to ignore line-breaks until next key.
 # If you want to omit the line-break after the end of text, use `>-` instead.
@@ -52,5 +52,3 @@ minima:
     - { platform: github,         user_url: "https://github.com/aelassas" }
     - { platform: linkedin,       user_url: "https://www.linkedin.com/in/aelassas" }
     - { platform: devto,          user_url: "https://dev.to/aelassas" }
-
-
