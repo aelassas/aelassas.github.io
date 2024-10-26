@@ -2,14 +2,14 @@ title: Akram El Assas - Senior Software Engineer
 
 remote_theme: jekyll/minima
 
+google_analytics: G-9C49146FEV
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
 minima:
   skin: classic
-  
-  google_analytics: G-9C49146FEV
   
   social_links:
     - { platform: github,         user_url: "https://github.com/aelassas" }
