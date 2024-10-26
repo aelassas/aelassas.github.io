@@ -1,0 +1,61 @@
+title: Senior Software Engineer
+author:
+  name: Akram El Assas
+
+# The `>` after `description:` means to ignore line-breaks until next key.
+# If you want to omit the line-break after the end of text, use `>-` instead.
+description: >
+  I specialize in crafting innovative and scalable solutions for digital media, backed by years of software engineering expertise. My comprehensive experience spans web, mobile, and desktop development, with particular focus on media and digital asset management systems.
+
+  My core strength is developing forward-thinking solutions that adapt across industries, helping organizations modernize their workflows and optimize data management. I transform complex business challenges into streamlined, automated processes that drive efficiency and growth.
+
+  With my open-source solutions, you can launch your own customizable digital marketplace - whether it's an eCommerce website, car rental platform, or property rental system - with the Docker-based setups provided. Each platform comes with demo links, comprehensive documentation, Stripe payment integration, and runs efficiently on just 1GB of RAM. Deploy your business for less than $5 monthly on cloud providers like Hetzner or DigitalOcean, making these platforms perfect for entrepreneurs seeking scalable and cost-effective solutions.
+
+# Build settings
+
+# If you clone the Minima repo and build locally, use this setting.
+# theme: minima
+
+# As of November 2023, GitHub Pages still uses Minima 2.5.1 (https://pages.github.com/versions/). 
+# If you want to use the latest Minima version on GitHub Pages, use the following setting and 
+# add a line comment on "theme: minima" above.
+remote_theme: jekyll/minima
+
+plugins:
+  # - jekyll-feed
+  - jekyll-seo-tag
+
+# Theme-specific settings
+
+# If you want to link only specific pages in your header, use this and add the path to the pages
+# in order as they should show up.
+header_pages:
+  - about.md
+
+# Set to `true` to show excerpts on the homepage.
+#show_excerpts: false
+
+# Minima specific settings, which are only available from Minima 3.0 onward.
+minima:
+  # Minima skin selection.
+  # Available skins are:
+  # classic	           Default, light color scheme.
+  # dark	             Dark variant of the classic skin.
+  # auto	             Adaptive skin based on the default classic and dark skins.
+  # solarized-light	   Light variant of solarized color scheme.
+  # solarized-dark	   Dark variant of solarized color scheme.
+  # solarized	         Adaptive skin for solarized color scheme skins.
+  skin: classic
+  
+  # Minima date format.
+  # The default value is "%b %d, %Y" (e.g. Nov 14, 2023) 
+  # Refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this.
+  #date_format: "%b-%d-%Y"
+
+  # Generate social links in footer.
+  social_links:
+    - { platform: github,         user_url: "https://github.com/aelassas" }
+    - { platform: linkedin,       user_url: "https://www.linkedin.com/in/aelassas" }
+    - { platform: devto,          user_url: "https://dev.to/aelassas" }
+
+
