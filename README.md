@@ -2,7 +2,7 @@ I craft innovative and scalable solutions for digital media, leveraging years of
 
 My key strength is creating forward-thinking solutions that adapt across industries, enabling organizations to streamline and automate their work process or data management.
 
-### OPEN-SOURCE PROJECTS
+## OPEN-SOURCE PROJECTS
 I am the creator and maintainer of the following open-source projects:
 
 * [Wexflow](https://github.com/aelassas/wexflow): .NET Workflow Engine and Automation Platform
@@ -15,19 +15,19 @@ By choosing my solutions, you can launch your own customizable digital marketpla
 
 I invested significant time and effort into building these open-source projects to make them freely available to the community. If my open-source projects have been helpful in your work, consider supporting their continued development and maintenance. You can contribute through [GitHub Sponsorship](https://github.com/sponsors/aelassas) (one-time or monthly), [PayPal](https://www.paypal.me/aelassaspp), or [Buy Me a Coffee](https://buymeacoffee.com/aelassas). Even a simple star on the GitHub repository helps spread the word and is greatly appreciated.
 
-### ARTICLES
+## ARTICLES
 * [Functional Programming in C#](https://github.com/aelassas/functional-cs)
 * [Test-Driven Development in C#](https://github.com/aelassas/tdd)
 * [Functional Programming in TypeScript](https://github.com/aelassas/functional-ts)
 * [Build Your Own nodemon in Few Lines of Code](https://github.com/aelassas/watcher)
 * [Microservices using ASP.NET Core, Ocelot, MongoDB and JWT](https://github.com/aelassas/microservices)
 
-### BOOKS
+## BOOKS
 * [Light of Truth (Ebook - English)](https://www.buymeacoffee.com/aelassas/e/233722)
 * [Light of Truth (Ebook - French)](https://www.buymeacoffee.com/aelassas/e/233726)
 * [Light of Truth (Paperback - French)](https://www.amazon.com/Lumieres-Verites-El-Assas-Akram/dp/2414299002)
 
-### AWARDS
+## AWARDS
 * Microsoft Community Contributor - Microsoft - 2011
 * Best C# article of November 2012 - CodeProject - 2012
 * Best overall article of November 2012 - CodeProject - 2012
