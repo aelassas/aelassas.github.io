@@ -33,8 +33,8 @@ I invested significant time and effort into building these open-source projects 
 ## AWARDS
 
 * Microsoft Community Contributor - Microsoft - 2011
-* Best C# article of November 2012 - CodeProject - 2012
-* Best overall article of November 2012 - CodeProject - 2012
+* Best C# Article of November 2012 - CodeProject - 2012
+* Best Overall Article of November 2012 - CodeProject - 2012
 * Best C# Article of December 2016 - CodeProject - 2016
 * Best C# Article of January 2017 - CodeProject - 2017
 * Best Article of June 2020 - CodeProject - 2020
@@ -44,6 +44,6 @@ I invested significant time and effort into building these open-source projects 
 * Most Valuable Professional - CodeProject - 2020
 * Most Valuable Professional - CodeProject - 2023
 * Most Valuable Professional - CodeProject - 2024
-* Top JavaScript author - dev.to - 2024
+* Top JavaScript Author - dev.to - 2024
 
 If you'd like to discuss any sort of opportunity, feel free to contact me through [GitHub](https://github.com/aelassas) or [LinkedIn](https://www.linkedin.com/in/aelassas).
