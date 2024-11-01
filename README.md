@@ -46,6 +46,6 @@ I invested significant time and effort into building these open-source projects 
 * Most Valuable Professional - CodeProject - 2024
 * Top JavaScript Author - dev.to - 2024
 
-<hr>
+<hr style="border:1px solid #d1d9e0b3">
 
 If you'd like to discuss any sort of opportunity, feel free to contact me through [GitHub](https://github.com/aelassas) or [LinkedIn](https://www.linkedin.com/in/aelassas).
