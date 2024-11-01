@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="set.plane.demo.css">
+</head>
+
+<body>
+  <h2>1. Disk</h2>
+  <canvas id="disk"></canvas>
+  <h2>2. Horizental half plane</h2>
+  <canvas id="hhp"></canvas>
+  <h2>3. Vertical half plane</h2>
+  <canvas id="vhp"></canvas>
+  <h2>4. Half disk</h2>
+  <canvas id="hd"></canvas>
+  <h2>5. Euclidean plane operations</h2>
+  <select class="form-select">
+    <option value="clear" selected>Choose operation</option>
+    <option value="translate">Translate</option>
+    <option value="scale">Scale</option>
+    <option value="rotate">Rotate</option>
+  </select>
+  <canvas id="ep_op"></canvas>
+
+  <script src="../dist/src/set.plane.demo.js" type="module"></script>
+  <script type="module">
+    import * as plane from '../dist/src/set.plane.demo.js'
+
+    document
+      .querySelector('.form-select')
+      .addEventListener('change', (e) => {
+        switch (e.target.value) {
+          case 'translate':
+            plane.translate_op()
+            break
+          case 'scale':
+            plane.scale_op()
+            break
+          case 'rotate':
+            plane.rotate_op()
+            break
+          case 'clear':
+            plane.clear('ep_op')
+            break
+        }
+      })
+  </script>
+</body>
