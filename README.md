@@ -33,6 +33,13 @@ I invested significant time and effort into building these open-source projects 
 ## AWARDS
 
 * Microsoft Community Contributor - Microsoft - 2011
+* Most Valuable Professional - CodeProject - 2020
+* Most Valuable Professional - CodeProject - 2023
+* Most Valuable Professional - CodeProject - 2024
+* Top JavaScript Author - dev.to - 2024
+
+<!--
+* Microsoft Community Contributor - Microsoft - 2011
 * Best C# Article of November 2012 - CodeProject - 2012
 * Best Overall Article of November 2012 - CodeProject - 2012
 * Best C# Article of December 2016 - CodeProject - 2016
@@ -45,6 +52,7 @@ I invested significant time and effort into building these open-source projects 
 * Most Valuable Professional - CodeProject - 2023
 * Most Valuable Professional - CodeProject - 2024
 * Top JavaScript Author - dev.to - 2024
+-->
 
 <hr style="height:1px; border:none; color:#d1d9e0b3; background-color:#d1d9e0b3;">
 
