@@ -2,8 +2,6 @@ I craft innovative and scalable solutions for digital media, leveraging years of
 
 My key strength is creating forward-thinking solutions that adapt across industries, enabling organizations to streamline and automate their work process or data management.
 
-Most of my web projects are built with [React](https://react.dev/) or [Next.js](https://nextjs.org/). If you want to dive deeper in the [React codebase](https://github.com/facebook/react), read this [paper](https://pomb.us/build-your-own-react/).
-
 ## OPEN-SOURCE PROJECTS
 
 I am the creator and maintainer of the following open-source projects:
@@ -32,6 +30,10 @@ These eBooks were previously paid, but now I offer them for free. Enjoy your rea
 
 * [Light of Truth (Free eBook - English)](https://aelassas.github.io/books/949812_LCL_LIV_EN.pdf): In this book, I explore various philosophies and religions. I examine different theories regarding the origins of the universe, providing a thoughtful perspective on creation and belief systems.
 * [Lumières de Vérités (eBook Gratuit - Français)](https://aelassas.github.io/books/949812_LCL_LIV_FR.pdf): Dans ce livre, j'explore diverses philosophies et religions. J'examine différentes théories concernant les origines de l'univers, offrant une perspective réfléchie sur la création et les systèmes de croyances.
+
+## GOOD READS
+
+* [Build your own React](https://pomb.us/build-your-own-react/)
 
 ## AWARDS
 
