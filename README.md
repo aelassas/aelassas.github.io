@@ -24,7 +24,7 @@ If these projects have been valuable to your work or research, please consider s
 * [Build Your Own nodemon in Few Lines of Code](https://github.com/aelassas/watcher)
 * [Microservices using ASP.NET Core, Ocelot, MongoDB and JWT](https://github.com/aelassas/microservices)
 
-## <span id="books">MY BOOKS</span>
+## MY BOOKS
 
 This book was once available for purchase, but I now offer it for free so that everyone can benefit from its insights.
 
