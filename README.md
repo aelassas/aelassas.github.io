@@ -8,10 +8,10 @@ My key strength lies in creating forward-thinking solutions that adapt across in
 
 I am the creator and maintainer of the following open-source projects:
 
-* [Wexflow](https://github.com/aelassas/wexflow): Workflow Engine and Automation Platform
-* [BookCars](https://github.com/aelassas/bookcars): Car Rental Platform with Mobile App
-* [Movin' In](https://github.com/aelassas/movinin): Rental Property Management Platform with Mobile App
-* [wexCommerce](https://github.com/aelassas/wexcommerce): Single Vendor Marketplace
+* [Wexflow](https://wexflow.github.io/): Workflow Engine and Automation Platform
+* [BookCars](https://bookcars.github.io/): Car Rental Platform with Mobile App
+* [Movin' In](https://movin-in.github.io/): Rental Property Management Platform with Mobile App
+* [wexCommerce](https://wexcommerce.github.io/): Single-Vendor Marketplace
 <!-- * [Wexstream](https://github.com/aelassas/wexstream): Video Conferencing Platform -->
 
 <!--
