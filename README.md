@@ -12,7 +12,7 @@ I am the creator and maintainer of the following open-source projects:
 * [BookCars](https://bookcars.github.io/): Car Rental Platform with Mobile App
 * [Movin' In](https://movin-in.github.io/): Rental Property Management Platform with Mobile App
 * [wexCommerce](https://wexcommerce.github.io/): Single-Vendor Marketplace
-* [Servy](https://github.com/aelassas/servy): Turn any app into a Windows service
+* [Servy](https://github.com/aelassas/servy): Run Any App as a Windows Service
 <!-- * [Wexstream](https://github.com/aelassas/wexstream): Video Conferencing Platform -->
 
 <!--
