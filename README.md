@@ -1,8 +1,3 @@
----
-layout: page
-title: Portfolio
----
-
 <!--
 I craft innovative and scalable solutions for digital media. My comprehensive experience spans web, mobile and desktop development, with particular focus on media and digital asset management systems.
 
