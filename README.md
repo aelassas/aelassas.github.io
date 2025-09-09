@@ -1,3 +1,8 @@
+---
+layout: page
+title: Portfolio
+---
+
 <!--
 I craft innovative and scalable solutions for digital media. My comprehensive experience spans web, mobile and desktop development, with particular focus on media and digital asset management systems.
 
@@ -79,6 +84,12 @@ You can also download the book in French by scanning the QR code below.
 * Top JavaScript Author - dev.to - 2024
 -->
 
+## CONTACT
+
+{% include contact-form.html %}
+
+<!--
 <hr style="height:1px; border:none; color:#d1d9e0b3; background-color:#d1d9e0b3;">
 
 If you'd like to discuss any sort of opportunity, feel free to contact me through [GitHub](https://github.com/aelassas) or [LinkedIn](https://www.linkedin.com/in/aelassas).
+-->

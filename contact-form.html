@@ -1,0 +1,58 @@
+<style>
+  :root {
+    --form-bg: #fafafa;
+    --form-border: #e0e0e0;
+    --footer-bg: #f5f5f5;
+    --border: #f2f2f2;
+    --border-radius: 8px;
+    --btn-bg: #121212;
+    --btn-hover: #323232;
+    --btn-text: #fff;
+  }
+
+  form {
+    display: grid;
+    gap: 1rem;
+    max-width: 600px;
+    padding: 1rem;
+    background-color: var(--form-bg);
+    border: 1px solid var(--form-border);
+    border-radius: var(--border-radius);
+  }
+
+  input,
+  textarea {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid var(--form-border);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+  }
+
+  textarea {
+    min-height: 220px;
+    resize: vertical;
+  }
+
+  button[type="submit"] {
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  button[type="submit"]:hover {
+    background-color: var(--btn-hover);
+  }
+</style>
+
+<form action="https://formspree.io/f/xyzdljoq" method="POST">
+  <input type="text" name="name" placeholder="Name" aria-label="Name" autocomplete="name" required>
+  <input type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" required>
+  <textarea name="message" placeholder="Message" aria-label="Message" required></textarea>
+  <button type="submit">Send</button>
+</form>
