@@ -4,7 +4,7 @@ I craft innovative and scalable solutions for digital media. My comprehensive ex
 My key strength lies in creating forward-thinking solutions that adapt across industries, enabling organizations to streamline and automate their work process or data management.
 -->
 
-##### OPEN-SOURCE PROJECTS
+#### OPEN-SOURCE PROJECTS
 
 I am the creator and maintainer of the following open-source projects:
 
@@ -21,7 +21,7 @@ By choosing my solutions, you can launch your own digital marketplace - whether 
 
 If BookCars, Wexflow, Servy, or any of my projects have helped you, saved you time, or inspired you in any way, please consider supporting their future growth and maintenance. You can show your support by starring the repository, sharing the project, or making a donation via [GitHub Sponsors](https://github.com/sponsors/aelassas) (one-time or monthly), [PayPal](https://www.paypal.me/aelassaspp), or [Buy Me a Coffee](https://www.buymeacoffee.com/aelassas). Every bit of support helps keep the projects active, maintained, and accessible to all.
 
-##### WRITE-UPS
+#### WRITE-UPS
 
 * [Functional Programming in C#](https://github.com/aelassas/functional-cs)
 * [Functional Programming in TypeScript](https://github.com/aelassas/functional-ts)
@@ -29,7 +29,7 @@ If BookCars, Wexflow, Servy, or any of my projects have helped you, saved you ti
 * [Build Your Own nodemon in Few Lines of Code](https://github.com/aelassas/watcher)
 * [Microservices using ASP.NET Core, Ocelot, MongoDB and JWT](https://github.com/aelassas/microservices)
 
-##### BOOKS
+#### BOOKS
 
 This book was once available for purchase, but I now offer it for free so that everyone can benefit from its insights.
 <!-- 
@@ -64,11 +64,11 @@ You can also download the book in French by scanning the QR code below.
 -->
 
 <!--
-##### GOOD READS
+#### GOOD READS
 
 * [Build your own React](https://pomb.us/build-your-own-react/)
 
-##### AWARDS
+#### AWARDS
 
 * Microsoft Community Contributor - Microsoft - 2011
 * Most Valuable Professional - CodeProject - 2020
@@ -93,7 +93,7 @@ You can also download the book in French by scanning the QR code below.
 * Top JavaScript Author - dev.to - 2024
 -->
 
-##### CONTACT
+#### CONTACT
 
 {% include contact-form.html %}
 
