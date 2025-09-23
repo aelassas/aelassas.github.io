@@ -1,6 +1,6 @@
 ##### ABOUT ME
 
-When I repeat something twice, it deserves automation.
+When I repeat something twice, I think automation.
 
 #### OPEN-SOURCE PROJECTS
 
