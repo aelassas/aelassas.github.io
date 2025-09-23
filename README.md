@@ -1,6 +1,6 @@
 #### ABOUT ME
 
-When I repeat something twice, I think automation.
+When I do the same thing twice, I think automation.
 
 #### OPEN-SOURCE PROJECTS
 
