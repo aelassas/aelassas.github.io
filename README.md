@@ -1,6 +1,6 @@
 #### ABOUT ME
 
-When I do the same thing twice, I think automation.
+Building what I wish existed for everyone.
 
 #### OPEN-SOURCE PROJECTS
 
