@@ -7,10 +7,10 @@ Building what I wish existed for everyone.
 I am the creator and maintainer of the following open-source projects:
 
 * [Wexflow](https://wexflow.github.io/): Workflow Automation Engine
+* [Servy](https://github.com/aelassas/servy): Turn Any App into a Native Windows Service
 * [BookCars](https://bookcars.github.io/): Car Rental Platform with Mobile App
 * [Movin' In](https://movin-in.github.io/): Rental Property Management Platform with Mobile App
 * [wexCommerce](https://wexcommerce.github.io/): Single-Vendor Marketplace
-* [Servy](https://github.com/aelassas/servy): Turn Any App into a Native Windows Service
 <!-- * [Wexstream](https://github.com/aelassas/wexstream): Video Conferencing Platform -->
 
 <!--
@@ -21,9 +21,9 @@ If BookCars, Wexflow, Servy, or any of my projects have helped you, saved you ti
 
 #### WRITE-UPS
 
-* [Functional Programming in C#](https://github.com/aelassas/functional-cs)
-* [Functional Programming in TypeScript](https://github.com/aelassas/functional-ts)
 * [Test-Driven Development: A Comprehensive Guide](https://github.com/aelassas/tdd)
+* [Functional Programming in TypeScript](https://github.com/aelassas/functional-ts)
+* [Functional Programming in C#](https://github.com/aelassas/functional-cs)
 * [Build Your Own nodemon in Few Lines of Code](https://github.com/aelassas/watcher)
 * [Microservices using ASP.NET Core, Ocelot, MongoDB and JWT](https://github.com/aelassas/microservices)
 
