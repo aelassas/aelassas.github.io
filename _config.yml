@@ -1,5 +1,4 @@
 title: Akram El Assas - Senior Software Engineer
-# title: aelassas
 
 remote_theme: jekyll/minima
 
@@ -19,6 +18,6 @@ minima:
     - title: Linkedin
       icon: linkedin
       url: "https://www.linkedin.com/in/aelassas"
-    - title: dev.to
-      icon: dev
-      url: "https://dev.to/aelassas"
+    #- title: dev.to
+    #  icon: dev
+    #  url: "https://dev.to/aelassas"
