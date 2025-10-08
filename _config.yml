@@ -21,3 +21,9 @@ minima:
     #- title: dev.to
     #  icon: dev
     #  url: "https://dev.to/aelassas"
+
+sass:
+  style: compressed
+
+include:
+  - assets/css/custom.scss
