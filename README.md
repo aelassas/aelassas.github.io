@@ -7,6 +7,7 @@ I am the creator and maintainer of the following open-source projects:
 * [BookCars](https://bookcars.github.io/): Car Rental Platform with Mobile App
 * [Movin' In](https://movin-in.github.io/): Rental Property Management Platform with Mobile App
 * [wexCommerce](https://wexcommerce.github.io/): Single-Vendor Marketplace
+
 <!--
 By choosing my solutions, you can launch your own digital marketplace, whether it's an ecommerce website, car rental platform, or property rental system. Each solution comes with comprehensive documentation, Stripe and PayPal payment integration, and runs efficiently on just 1GB of RAM. Deploy your business for less than $5/month on cloud providers like [Hetzner](https://www.hetzner.com/cloud/) or [DigitalOcean](https://www.digitalocean.com/pricing/droplets), perfect for anyone seeking scalable and cost-effective solutions.
 -->
