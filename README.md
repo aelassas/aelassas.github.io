@@ -10,8 +10,11 @@ I am the creator and maintainer of the following open-source projects:
 
 <!--
 By choosing my solutions, you can launch your own digital marketplace, whether it's an ecommerce website, car rental platform, or property rental system. Each solution comes with comprehensive documentation, Stripe and PayPal payment integration, and runs efficiently on just 1GB of RAM. Deploy your business for less than $5/month on cloud providers like [Hetzner](https://www.hetzner.com/cloud/) or [DigitalOcean](https://www.digitalocean.com/pricing/droplets), perfect for anyone seeking scalable and cost-effective solutions.
--->
+
 If BookCars, Wexflow, Servy, or any of my projects have helped you, saved you time, or inspired you in any way, please consider supporting their future growth and maintenance. You can show your support by starring the repository, sharing the project, or making a donation via [GitHub Sponsors](https://github.com/sponsors/aelassas) (one-time or monthly), [PayPal](https://www.paypal.me/aelassaspp), or [Buy Me a Coffee](https://www.buymeacoffee.com/aelassas). Every bit of support helps keep the projects active, maintained, and accessible to all.
+-->
+
+I no longer provide custom development services for my projects such as bookcars, movinin, wexcommerce, or wexflow. These projects are intended as starting points for anyone looking to build a car rental platform, a property rental platform, a single-vendor marketplace, or a workflow engine. I continue to maintain these projects by fixing bugs reported on GitHub, updating dependencies, and adding new features requested by users on GitHub. Please note that I no longer take requests for custom development via email. If any of my projects have helped you, saved you time, or inspired you in any way, you can show your support with a donation through [GitHub](https://github.com/sponsors/aelassas), [PayPal](https://www.paypal.me/aelassaspp), or [Buy Me a Coffee](https://www.buymeacoffee.com/aelassas).
 
 #### WRITE-UPS
 
