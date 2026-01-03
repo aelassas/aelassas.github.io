@@ -61,9 +61,11 @@ This book was once available for purchase, but I now offer it for free so that e
 * Top JavaScript Author - dev.to - 2024
 -->
 
+<!--
 #### CONTACT
 
 {% include contact-form.html %}
+-->
 
 <!--
 <hr style="height:1px; border:none; color:#d1d9e0b3; background-color:#d1d9e0b3;">
