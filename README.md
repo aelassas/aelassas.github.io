@@ -20,6 +20,13 @@ I no longer provide custom development services for my GitHub projects such as b
 
 If Servy, BookCars, Wexflow, or any of my projects have helped you, saved you time, or inspired you in any way, you can show your support by starring the repository, sharing the project, or making a donation via [GitHub Sponsors](https://github.com/sponsors/aelassas) (one-time or monthly), [PayPal](https://www.paypal.me/aelassaspp), or [Buy Me a Coffee](https://www.buymeacoffee.com/aelassas). Every bit of support helps keep the projects active, maintained, and accessible to all.
 
+#### BOOKS
+
+This book was once available for purchase, but I now offer it for free so that everyone can benefit.
+
+* [Light of truth (English - PDF)](https://2ly.link/27oLb): This book explores different worldviews and theories about the universe and existence. Through logical reasoning, it examines creation and the purpose of life, inviting readers to reflect and seek truth with an open mind.
+* [Lumières de vérités (Français - PDF)](https://2ly.link/27oLd): Ce livre explore différentes conceptions du monde et théories sur l'origine de l'univers et la nature de l'existence. Par un raisonnement logique, il invite les lecteurs à réfléchir sur la création, le but de la vie et à chercher la vérité avec un esprit ouvert.
+
 #### WRITE-UPS
 
 * [Test-Driven Development: A Comprehensive Guide](https://github.com/aelassas/tdd)
@@ -27,13 +34,6 @@ If Servy, BookCars, Wexflow, or any of my projects have helped you, saved you ti
 * [Functional Programming in C#](https://github.com/aelassas/functional-cs)
 * [Build Your Own nodemon in Few Lines of Code](https://github.com/aelassas/watcher)
 * [Microservices using ASP.NET Core, Ocelot, MongoDB and JWT](https://github.com/aelassas/microservices)
-
-#### BOOKS
-
-This book was once available for purchase, but I now offer it for free so that everyone can benefit.
-
-* [Light of truth (English - PDF)](https://2ly.link/27oLb): This book explores different worldviews and theories about the universe and existence. Through logical reasoning, it examines creation and the purpose of life, inviting readers to reflect and seek truth with an open mind.
-* [Lumières de vérités (Français - PDF)](https://2ly.link/27oLd): Ce livre explore différentes conceptions du monde et théories sur l'origine de l'univers et la nature de l'existence. Par un raisonnement logique, il invite les lecteurs à réfléchir sur la création, le but de la vie et à chercher la vérité avec un esprit ouvert.
 
 <!--
 #### GOOD READS
