@@ -2,7 +2,7 @@
 
 I am the creator and maintainer of the following open-source projects:
 
-* [Servy](https://github.com/aelassas/servy): Professional-Grade Windows Service Wrapper
+* [Servy](https://servy-win.github.io/): Professional-Grade Windows Service Wrapper
 * [Wexflow](https://wexflow.github.io/): Workflow Automation Engine
 * [BookCars](https://bookcars.github.io/): Car Rental Platform with Mobile App
 * [Movin' In](https://movin-in.github.io/): Rental Property Management Platform with Mobile App
