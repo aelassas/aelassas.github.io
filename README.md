@@ -8,7 +8,7 @@ I am the creator and maintainer of the following open-source projects:
 * [Movin' In](https://movin-in.github.io/): Rental Property Management Platform with Mobile App
 * [wexCommerce](https://wexcommerce.github.io/): Single-Vendor Marketplace
 
-If my projects help you, save you time, or power your production workflows, consider supporting them to keep them active, independent, and free for everyone. You can show your support via [GitHub Sponsors](https://github.com/sponsors/aelassas), [PayPal](https://www.paypal.me/aelassaspp), [Liberapay](https://liberapay.com/aelassas/), or [Buy Me a Coffee](https://www.buymeacoffee.com/aelassas).
+If my projects helped you, saved you time, or powered your production workflows, consider supporting them to keep them active, independent, and free for everyone. You can show your support via [GitHub Sponsors](https://github.com/sponsors/aelassas), [PayPal](https://www.paypal.me/aelassaspp), [Liberapay](https://liberapay.com/aelassas/), or [Buy Me a Coffee](https://www.buymeacoffee.com/aelassas).
 
 #### BOOKS
 
