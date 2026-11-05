@@ -2,11 +2,10 @@ title: Akram El Assas - Senior Software Engineer
 
 url: "https://wexdev.com"
 
-remote_theme: pages-themes/primer@v0.2.0
+theme: jekyll-theme-primer
 
 google_analytics: G-9C49146FEV
 
 plugins:
-  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
