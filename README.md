@@ -36,4 +36,6 @@ This book was available for purchase, but I now offer it for free so everyone ca
 
 #### CONTACT
 
+If you have any questions about my projects, would like to collaborate, or have an opportunity to discuss, feel free to contact me using the form below.
+
 {% include contact-form.html %}
