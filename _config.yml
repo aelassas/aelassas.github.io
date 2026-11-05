@@ -4,8 +4,6 @@ url: "https://wexdev.com"
 
 theme: jekyll-theme-primer
 
-google_analytics: G-9C49146FEV
-
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
