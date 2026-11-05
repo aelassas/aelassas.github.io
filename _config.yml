@@ -1,23 +1,12 @@
 title: Akram El Assas - Senior Software Engineer
 
-remote_theme: jekyll/minima
+url: "https://wexdev.com"
+
+remote_theme: pages-themes/primer@v0.2.0
 
 google_analytics: G-9C49146FEV
 
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
-
-minima:
-  skin: classic
-  
-  social_links:
-    - title: GitHub
-      icon: github
-      url: "https://github.com/aelassas"
-    - title: Linkedin
-      icon: linkedin
-      url: "https://www.linkedin.com/in/aelassas"
-    #- title: dev.to
-    #  icon: dev
-    #  url: "https://dev.to/aelassas"
