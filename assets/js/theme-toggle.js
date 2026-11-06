@@ -49,8 +49,9 @@
       if (!e.target.closest('.site-header__inner')) setMenu(false);
     });
 
-    window.matchMedia('(min-width: 641px)').addEventListener('change', function (e) {
-      if (e.matches) setMenu(false);
-    });
+    var desktop = window.matchMedia('(min-width: 641px)');
+    var onChange = function (e) { if (e.matches) setMenu(false); };
+    if (desktop.addEventListener) desktop.addEventListener('change', onChange);
+    else if (desktop.addListener) desktop.addListener(onChange);
   }
 })();

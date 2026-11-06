@@ -34,6 +34,7 @@
   --bg-glow-1: rgba(120, 125, 135, 0.14);
   --bg-glow-2: rgba(150, 150, 155, 0.12);
   --text: #1c1d22;
+  --heading: #1c1d22;
   --text-muted: #5b6070;
   --accent: #0a66d6;
   --accent-contrast: #ffffff;
@@ -55,8 +56,9 @@
   --bg: #0b0b0e;
   --bg-glow-1: rgba(200, 200, 210, 0.08);
   --bg-glow-2: rgba(160, 160, 170, 0.06);
-  --text: #d5d7dd;
-  --text-muted: #9a9eab;
+  --text: #bcbfc8;
+  --heading: #f7f7f9;
+  --text-muted: #8e92a0;
   --accent: #4da3ff;
   --accent-contrast: #0b0b0e;
   --glass: rgba(30, 30, 36, 0.62);
@@ -162,7 +164,7 @@ a:hover {
   font-weight: 600;
   font-size: 1.15rem;
   letter-spacing: -0.01em;
-  color: var(--text);
+  color: var(--heading);
   white-space: nowrap;
 }
 
@@ -222,28 +224,47 @@ a:hover {
 
 .menu-toggle {
   display: none;
-  flex-direction: column;
-  gap: 4px;
 }
 
-.menu-toggle__bar {
+.menu-toggle__icon,
+.menu-toggle__icon::before,
+.menu-toggle__icon::after {
   display: block;
   width: 18px;
   height: 2px;
   border-radius: 2px;
   background: currentColor;
-  transition: transform 0.25s var(--ease), opacity 0.2s var(--ease);
+  transition: transform 0.25s var(--ease), background-color 0.2s var(--ease);
 }
 
-.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(1) {
+.menu-toggle__icon {
+  position: relative;
+}
+
+.menu-toggle__icon::before,
+.menu-toggle__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.menu-toggle__icon::before {
+  top: -6px;
+}
+
+.menu-toggle__icon::after {
+  top: 6px;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__icon {
+  background: transparent;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__icon::before {
   transform: translateY(6px) rotate(45deg);
 }
 
-.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(3) {
+.menu-toggle[aria-expanded="true"] .menu-toggle__icon::after {
   transform: translateY(-6px) rotate(-45deg);
 }
 
@@ -263,6 +284,11 @@ a:hover {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 2.5rem 1.25rem 3rem;
+}
+
+main h1,
+main h2 {
+  color: var(--heading);
 }
 
 main h1 {
@@ -292,7 +318,7 @@ main h2::before {
   height: 1.1rem;
   margin-right: 0.6rem;
   border-radius: 999px;
-  background: var(--text);
+  background: var(--heading);
   vertical-align: -0.1rem;
 }
 

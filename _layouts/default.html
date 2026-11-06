@@ -6,8 +6,8 @@
   <title>{{ site.title | escape }}</title>
   {% seo title=false %}
   {% include head-custom.html %}
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}" defer></script>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
