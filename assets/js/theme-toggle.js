@@ -5,6 +5,8 @@
 
   function sync() {
     var dark = root.getAttribute('data-theme') === 'dark';
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', dark ? '#0b0b0e' : '#f3f3f4');
     button.setAttribute('aria-pressed', String(dark));
     button.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
   }
