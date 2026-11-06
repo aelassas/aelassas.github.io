@@ -198,7 +198,8 @@ a:hover {
   text-decoration: none;
 }
 
-.theme-toggle {
+.theme-toggle,
+.menu-toggle {
   flex: none;
   display: inline-flex;
   align-items: center;
@@ -214,8 +215,36 @@ a:hover {
   transition: background-color 0.2s var(--ease);
 }
 
-.theme-toggle:hover {
+.theme-toggle:hover,
+.menu-toggle:hover {
   background: var(--glass-border);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menu-toggle__bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform 0.25s var(--ease), opacity 0.2s var(--ease);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 .theme-toggle .icon-sun,
@@ -346,6 +375,7 @@ main > :nth-child(n+6) { animation-delay: 0.15s; }
 
   .site-header__inner {
     flex-wrap: wrap;
+    gap: 0.5rem;
     border-radius: var(--radius);
     padding: 0.6rem 0.75rem 0.6rem 1rem;
   }
@@ -358,6 +388,31 @@ main > :nth-child(n+6) { animation-delay: 0.15s; }
     order: 3;
     flex: 0 0 100%;
     margin-left: 0;
+  }
+
+  .js .menu-toggle {
+    display: inline-flex;
+  }
+
+  /* Collapsible menu only when JavaScript is available */
+  .js .site-nav {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 0.5rem;
+    margin-top: 0.25rem;
+    border-top: 1px solid var(--glass-border);
+    overflow: visible;
+  }
+
+  .js .site-nav.is-open {
+    display: flex;
+  }
+
+  .js .site-nav a {
+    padding: 0.7rem 0.9rem;
+    font-size: 1rem;
+    border-radius: var(--radius-sm);
   }
 
   .container {

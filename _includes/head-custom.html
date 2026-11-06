@@ -6,6 +6,7 @@
     var theme = 'light';
     try { if (localStorage.getItem('theme') === 'dark') theme = 'dark'; } catch (e) { /* storage unavailable */ }
     document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.classList.add('js');
     if (theme === 'dark') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0b0b0e');
   })();
 </script>
