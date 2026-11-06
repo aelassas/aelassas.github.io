@@ -1,3 +1,8 @@
+/**
+ * @file theme-toggle.js
+ * @description Controls theme switching (light/dark mode), mobile navigation menu 
+ * toggling, and active scroll section highlighting for the site header.
+ */
 (function () {
   var root = document.documentElement;
 
@@ -84,9 +89,9 @@
         }
       }, { passive: true });
       update();
-    };
+    }
+  };
 
-    // Uncomment the line below to enable highlighting of nav links based on scroll position
-    highlightNavLink();
-  }
+  // Uncomment the line below to enable highlighting of nav links based on scroll position
+  highlightNavLink();
 })();
