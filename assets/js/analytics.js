@@ -23,7 +23,7 @@
   events.forEach(function (e) { window.addEventListener(e, load, { passive: true }); });
 
   // Fallback so visitors who never interact are still counted
-  function schedule() { setTimeout(load, 4000); }
-  if (document.readyState === 'complete') schedule();
-  else window.addEventListener('load', schedule);
+  // function schedule() { setTimeout(load, 4000); }
+  // if (document.readyState === 'complete') schedule();
+  // else window.addEventListener('load', schedule);
 })();
