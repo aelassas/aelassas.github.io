@@ -1,56 +1,67 @@
 <style>
-  :root {
-    --form-bg: #fafafa;
-    --form-border: #e0e0e0;
-    --footer-bg: #f5f5f5;
-    --border: #f2f2f2;
-    --border-radius: 8px;
-    --btn-bg: #121212;
-    --btn-hover: #323232;
-    --btn-text: #fff;
-  }
-
-  form {
+  .contact-form {
     display: grid;
     gap: 1rem;
     max-width: 600px;
-    padding: 1rem;
-    background-color: var(--form-bg);
-    border: 1px solid var(--form-border);
-    border-radius: var(--border-radius);
+    padding: 1.25rem;
+    background-color: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
   }
 
-  input,
-  textarea {
-    padding: 0.75rem;
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
     font-size: 1rem;
-    border: 1px solid var(--form-border);
-    border-radius: var(--border-radius);
     font-family: inherit;
+    color: var(--text);
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: var(--radius-sm);
+    transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
   }
 
-  textarea {
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    color: var(--text-muted);
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px var(--focus-ring);
+  }
+
+  .contact-form textarea {
     min-height: 220px;
     resize: vertical;
   }
 
-  button[type="submit"] {
-    padding: 0.75rem;
+  .contact-form button[type="submit"] {
+    padding: 0.75rem 1.5rem;
     font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
     background-color: var(--btn-bg);
     color: var(--btn-text);
     border: none;
-    border-radius: var(--border-radius);
+    border-radius: 999px;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s var(--ease), transform 0.2s var(--ease);
   }
 
-  button[type="submit"]:hover {
+  .contact-form button[type="submit"]:hover {
     background-color: var(--btn-hover);
+    transform: translateY(-1px);
   }
 </style>
 
-<form action="https://formspree.io/f/mzzaobrn" method="POST">
+<form class="contact-form" action="https://formspree.io/f/mzzaobrn" method="POST">
   <input type="text" name="name" placeholder="Name" aria-label="Name" autocomplete="name" required>
   <input type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" required>
   <textarea name="message" placeholder="Message" aria-label="Message" required></textarea>

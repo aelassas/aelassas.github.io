@@ -1,5 +1,17 @@
 <link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
 
+<script>
+  (function () {
+    var theme = 'light';
+    try { if (localStorage.getItem('theme') === 'dark') theme = 'dark'; } catch (e) { /* storage unavailable */ }
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap">
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9C49146FEV"></script>
 <script>
@@ -9,13 +21,3 @@
 
   gtag('config', 'G-9C49146FEV');
 </script>
-
-<style>
-  h1 a {
-    color: #24292e;
-  }
-
-  h1 a:hover {
-    text-decoration: none;
-  }
-</style>
