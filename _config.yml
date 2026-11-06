@@ -1,6 +1,6 @@
 title: Akram El Assas - Senior Software Engineer
 
-description: Creator of Servy, Wexflow, BookCars, Movin' In, and wexCommerce.
+description: Akram El Assas - Senior Software Engineer. Creator of Servy, Wexflow, BookCars, Movin' In, and wexCommerce.
 lang: en
 
 url: "https://wexdev.com"
@@ -8,6 +8,10 @@ url: "https://wexdev.com"
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+# Prevents the first README heading from becoming the page title
+titles_from_headings:
+  enabled: false
 
 defaults:
   - scope:

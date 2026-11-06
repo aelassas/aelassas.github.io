@@ -1,6 +1,6 @@
-# Akram El Assas
+# Senior Software Engineer
 
-Senior Software Engineer
+Building and maintaining open-source software.
 {: .lead}
 
 ## Open-Source Projects
