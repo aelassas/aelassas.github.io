@@ -49,8 +49,8 @@
   --header-highlight: rgba(255, 255, 255, 0.7);
   --header-shadow: 0 1px 2px rgba(24, 32, 64, 0.06), 0 8px 24px rgba(24, 32, 64, 0.08);
   --accent-tint: rgba(10, 102, 214, 0.1);
-  --h1-from: rgb(28, 29, 34);
-  --h1-to: rgba(28, 29, 34, 0.45);
+  --h1-from: rgb(12, 13, 16);
+  --h1-to: rgba(12, 13, 16, 0.65);
   --input-bg: rgba(255, 255, 255, 0.9);
   --input-border: rgba(20, 24, 40, 0.16);
   --focus-ring: rgba(10, 102, 214, 0.35);
@@ -81,7 +81,7 @@
   --header-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.4);
   --accent-tint: rgba(77, 163, 255, 0.16);
   --h1-from: rgb(255, 255, 255);
-  --h1-to: rgba(255, 255, 255, 0.45);
+  --h1-to: rgba(255, 255, 255, 0.65);
   --input-bg: rgba(255, 255, 255, 0.05);
   --input-border: rgba(255, 255, 255, 0.16);
   --focus-ring: rgba(77, 163, 255, 0.4);
