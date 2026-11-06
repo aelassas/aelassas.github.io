@@ -49,6 +49,8 @@
   --header-highlight: rgba(255, 255, 255, 0.7);
   --header-shadow: 0 1px 2px rgba(24, 32, 64, 0.06), 0 8px 24px rgba(24, 32, 64, 0.08);
   --accent-tint: rgba(10, 102, 214, 0.1);
+  --h1-from: rgb(28, 29, 34);
+  --h1-to: rgba(28, 29, 34, 0.45);
   --input-bg: rgba(255, 255, 255, 0.9);
   --input-border: rgba(20, 24, 40, 0.16);
   --focus-ring: rgba(10, 102, 214, 0.35);
@@ -78,6 +80,8 @@
   --header-highlight: rgba(255, 255, 255, 0.08);
   --header-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.4);
   --accent-tint: rgba(77, 163, 255, 0.16);
+  --h1-from: rgb(255, 255, 255);
+  --h1-to: rgba(255, 255, 255, 0.45);
   --input-bg: rgba(255, 255, 255, 0.05);
   --input-border: rgba(255, 255, 255, 0.16);
   --focus-ring: rgba(77, 163, 255, 0.4);
@@ -316,10 +320,18 @@ main h2 {
 }
 
 main h1 {
+  width: fit-content;
+  max-width: 100%;
   margin: 1.5rem 0 0.25rem;
+  padding-bottom: 0.08em;
   font-size: clamp(2.2rem, 6vw, 3.4rem);
   line-height: 1.1;
   letter-spacing: -0.03em;
+  color: var(--heading);
+  background: linear-gradient(160deg, var(--h1-from) 30%, var(--h1-to) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 main .lead {
