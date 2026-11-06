@@ -13,4 +13,7 @@
 
 <link rel="preload" href="{{ '/assets/fonts/outfit-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
 
-<script src="{{ '/assets/js/analytics.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+<script type="module">
+  import { initGA } from "{{ '/assets/js/analytics.js' | relative_url }}?v={{ site.time | date: '%s' }}";
+  initGA('G-9C49146FEV');
+</script>
