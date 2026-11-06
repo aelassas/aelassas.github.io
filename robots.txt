@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /books/
 
 Sitemap: https://wexdev.com/sitemap.xml
