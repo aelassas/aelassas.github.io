@@ -54,4 +54,34 @@
     if (desktop.addEventListener) desktop.addEventListener('change', onChange);
     else if (desktop.addListener) desktop.addListener(onChange);
   }
+
+  // Highlight the nav link of the section currently in view
+  var links = nav ? Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]')) : [];
+  var sections = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+  if (links.length) {
+    var ticking = false;
+    var update = function () {
+      ticking = false;
+      var current = -1;
+      var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      if (atBottom) {
+        current = links.length - 1;
+      } else {
+        sections.forEach(function (s, i) {
+          if (s && s.getBoundingClientRect().top <= 140) current = i;
+        });
+      }
+      links.forEach(function (a, i) {
+        if (i === current) a.setAttribute('aria-current', 'true');
+        else a.removeAttribute('aria-current');
+      });
+    };
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(update);
+      }
+    }, { passive: true });
+    update();
+  }
 })();
