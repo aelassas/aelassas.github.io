@@ -8,6 +8,7 @@ url: "https://wexdev.com"
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Prevents the first README heading from becoming the page title
 titles_from_headings:
