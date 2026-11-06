@@ -11,9 +11,9 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --max-width: 860px;
 
-  --bg: #f4f5f8;
-  --bg-glow-1: rgba(99, 132, 255, 0.16);
-  --bg-glow-2: rgba(120, 220, 200, 0.14);
+  --bg: #f3f3f4;
+  --bg-glow-1: rgba(120, 125, 135, 0.14);
+  --bg-glow-2: rgba(150, 150, 155, 0.12);
   --text: #1c1d22;
   --text-muted: #5b6070;
   --accent: #2f5bea;
@@ -34,8 +34,8 @@
 
 :root[data-theme="dark"] {
   --bg: #0b0b0e;
-  --bg-glow-1: rgba(110, 130, 255, 0.12);
-  --bg-glow-2: rgba(80, 200, 180, 0.08);
+  --bg-glow-1: rgba(200, 200, 210, 0.08);
+  --bg-glow-2: rgba(160, 160, 170, 0.06);
   --text: #f5f5f7;
   --text-muted: #a4a7b3;
   --accent: #9db4ff;
@@ -192,11 +192,11 @@ a:hover {
   background: var(--glass-strong);
   color: var(--text);
   cursor: pointer;
-  transition: transform 0.25s var(--ease), background-color 0.2s var(--ease);
+  transition: background-color 0.2s var(--ease);
 }
 
 .theme-toggle:hover {
-  transform: rotate(15deg) scale(1.06);
+  background: var(--glass-border);
 }
 
 .theme-toggle .icon-sun,
@@ -244,7 +244,7 @@ main h2::before {
   height: 1.1rem;
   margin-right: 0.6rem;
   border-radius: 999px;
-  background: var(--accent);
+  background: var(--text);
   vertical-align: -0.1rem;
 }
 
@@ -253,31 +253,16 @@ main p {
 }
 
 main ul {
-  list-style: none;
   margin: 0 0 1.25rem;
-  padding: 0;
-  display: grid;
-  gap: 0.75rem;
+  padding-left: 1.5rem;
 }
 
 main li {
-  padding: 0.9rem 1.2rem;
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
-  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  margin: 0.4rem 0;
 }
 
-main li:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
-}
-
-main li > a:first-child {
-  font-weight: 600;
+main li::marker {
+  color: var(--text-muted);
 }
 
 /* Staggered entrance */
