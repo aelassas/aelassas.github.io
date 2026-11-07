@@ -92,6 +92,6 @@
     }
   };
 
-  // Uncomment the line below to enable highlighting of nav links based on scroll position
-  highlightNavLink();
+  // Uncomment the line below to enable highlighting of nav links based on scroll position + set header position to sticky
+  // highlightNavLink();
 })();
