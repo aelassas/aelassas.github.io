@@ -4,7 +4,7 @@ import {
   initLanguageMenu,
   initThemeToggle,
   updateFooterYear
-} from './ui.js'
+} from './utils.js'
 
 // Wait for DOM to be fully loaded before initializing the app
 window.addEventListener('DOMContentLoaded', async () => {
