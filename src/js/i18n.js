@@ -135,13 +135,14 @@ function highlightSelectedLang(lang) {
 /**
  * Changes the website language to the specified `lang`,
  * fetches corresponding translation JSON,
- * applies translations, updates page title,
+ * applies translations, updates page title and URL,
  * and highlights the selected language button.
  *
  * @param {string} lang - Language code to switch to.
+ * @param {boolean} [keepQueryParam=true] - Whether to include `?lang=xx` in the address bar.
  * @returns {Promise<void>}
  */
-export async function setLang(lang) {
+export async function setLang(lang, keepQueryParam = true) {
   try {
     // Persist selected language in local storage
     localStorage.setItem('lang', lang)
@@ -178,6 +179,15 @@ export async function setLang(lang) {
       }
     }
 
+    // Update URL: keep ?lang=xx if explicit or reloading with it; remove if accessing root site
+    const url = new URL(window.location)
+    if (keepQueryParam) {
+      url.searchParams.set('lang', lang)
+    } else {
+      url.searchParams.delete('lang')
+    }
+    window.history.replaceState({}, '', url)
+
     // Visually highlight the selected language in the UI
     highlightSelectedLang(lang)
   } catch (err) {
@@ -186,10 +196,9 @@ export async function setLang(lang) {
 }
 
 /**
- * Loads the initial language based on URL `lang` parameter,
- * then localStorage, falling back to English ('en').
- * Keeps the address bar clean without pushing or rewriting query parameters.
- * Shows a loading indicator while fetching.
+ * Loads initial language.
+ * Keeps `?lang` in URL if present on load or changed via dropdown.
+ * Strips `?lang` only when visiting root without query params.
  *
  * @returns {Promise<void>}
  */
@@ -200,13 +209,15 @@ export async function loadInitialLanguage() {
   const urlLang = params.get('lang')
   const storedLang = localStorage.getItem('lang')
 
-  const lang = supportedLangs.includes(urlLang)
+  const hasUrlLang = supportedLangs.includes(urlLang)
+  const lang = hasUrlLang
     ? urlLang
     : supportedLangs.includes(storedLang)
       ? storedLang
       : 'en'
 
-  await setLang(lang)
+  // Keep ?lang in URL if present in request, otherwise keep clean
+  await setLang(lang, hasUrlLang)
 
   document.documentElement.removeAttribute('data-loading')
 }

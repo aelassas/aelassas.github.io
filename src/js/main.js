@@ -1,20 +1,23 @@
-/**
- * @file main.js
- * @description Main application entry point for wexdev.com. Initializes analytics,
- * theme toggling, language menu interaction, and mobile navigation.
- */
-import { initGA } from './ga.js'
-import { initThemeToggle, initLanguageMenu, initHamburgerMenu, updateFooterYear } from './ui.js'
 import { loadInitialLanguage, setLang } from './i18n.js'
+import {
+  initHamburgerMenu,
+  initLanguageMenu,
+  initThemeToggle,
+  updateFooterYear
+} from './ui.js'
 
-// Initialize GA4 lazily on first interaction
-initGA('G-9C49146FEV')
+// Wait for DOM to be fully loaded before initializing the app
+window.addEventListener('DOMContentLoaded', async () => {
+  try {
+    // Load and apply the correct language based on ?lang or localStorage, then clean URL
+    await loadInitialLanguage()
 
-// Initialize UI helpers
-initThemeToggle()
-initLanguageMenu(setLang)
-initHamburgerMenu()
-updateFooterYear()
-
-// Load initial language from URL, localStorage, or fallback
-loadInitialLanguage()
+    // Initialize UI components
+    initHamburgerMenu()        // Mobile nav toggle
+    initLanguageMenu(setLang)  // Language dropdown logic
+    initThemeToggle()          // Light/dark mode toggle
+    updateFooterYear()         // Set current year in footer
+  } catch (err) {
+    console.error('Error during app initialization:', err)
+  }
+})

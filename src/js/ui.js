@@ -20,9 +20,9 @@ export function initHamburgerMenu() {
 /**
  * Initializes the language selection menu.
  * Toggles the language menu visibility, sets the selected language,
- * and closes the menu when clicking outside.
+ * handles click-outside, and closes on Escape key press.
  * 
- * @param {function(string): Promise<void>} setLang - Async function to change the app language.
+ * @param {function(string, boolean=): Promise<void>} setLang - Async function to change the app language.
  */
 export function initLanguageMenu(setLang) {
   const langToggle = document.getElementById('lang-toggle')
@@ -30,8 +30,12 @@ export function initLanguageMenu(setLang) {
 
   if (!langToggle || !langMenu) return
 
-  langToggle.addEventListener('click', (e) => {
-    e.stopPropagation()
+  const closeMenu = () => {
+    langToggle.setAttribute('aria-expanded', 'false')
+    langMenu.hidden = true
+  }
+
+  langToggle.addEventListener('click', () => {
     const expanded = langToggle.getAttribute('aria-expanded') === 'true'
     langToggle.setAttribute('aria-expanded', !expanded)
     langMenu.hidden = expanded
@@ -41,24 +45,24 @@ export function initLanguageMenu(setLang) {
     item.addEventListener('click', async () => {
       const lang = item.getAttribute('data-lang')
       if (lang) {
-        await setLang(lang)
+        await setLang(lang, true)
       }
-      langToggle.setAttribute('aria-expanded', 'false')
-      langMenu.hidden = true
+      closeMenu()
     })
   })
 
+  // Close when clicking outside
   document.addEventListener('click', (e) => {
     if (!langToggle.contains(e.target) && !langMenu.contains(e.target)) {
-      langToggle.setAttribute('aria-expanded', 'false')
-      langMenu.hidden = true
+      closeMenu()
     }
   })
 
+  // Close on Escape key press and return focus to trigger button
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      langToggle.setAttribute('aria-expanded', 'false')
-      langMenu.hidden = true
+    if (e.key === 'Escape' && !langMenu.hidden) {
+      closeMenu()
+      langToggle.focus()
     }
   })
 }
