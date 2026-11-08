@@ -1,46 +1,53 @@
-# Senior Software Engineer
+# wexdev.com
 
-Building and maintaining open-source software.
-{: .lead}
+Source code for [wexdev.com](https://wexdev.com), the portfolio website of Akram El Assas. Built with Vite, ES Modules, native CSS variables, and modern web standards.
 
-## Open-Source Projects
+## Prerequisites
 
-I am the creator and maintainer of the following open-source projects:
+- **Node.js**: LTS release recommended
+- **npm**: v10+
 
-* [Servy](https://servy-win.github.io/): Enterprise-Grade Windows Service Wrapper
-* [Wexflow](https://wexflow.github.io/): Workflow Automation Engine
-* [BookCars](https://bookcars.github.io/): Car Rental Platform with Mobile App
-* [Movin' In](https://movin-in.github.io/): Rental Property Management Platform with Mobile App
-* [wexCommerce](https://wexcommerce.github.io/): Single-Vendor Marketplace
+## Getting Started
 
-If my projects have helped you, saved you time, run in production, support your business, or help you generate revenue, please consider giving something back. Maintaining open-source software takes significant time and effort, from development and bug fixes to security updates and releases. Your support motivates me to continue developing and maintaining these projects, keeping them active, independent, and free for everyone.
+1. **Clone the repository:**
 
-You can support my work through [PayPal](https://www.paypal.me/aelassaspp), [GitHub Sponsors](https://github.com/sponsors/aelassas), [Liberapay](https://liberapay.com/aelassas/), or [Buy Me a Coffee](https://www.buymeacoffee.com/aelassas).
+   ```bash
+   git clone https://github.com/aelassas/wexdev.com.git
+   cd wexdev.com
+   ```
 
-If you cannot contribute financially, you can still help by sharing the projects, reporting bugs, submitting pull requests, or simply saying thank you. Every bit is greatly appreciated.
+2. **Install dependencies:**
 
-## Books
+   ```bash
+   npm install
+   ```
 
-These books were previously available for purchase, but I now offer them for free so everyone can benefit from their insights.
+## Available Scripts
 
-* [Light of Truth (English - PDF)](https://2ly.link/27oLb): This book explores different worldviews and theories about the universe and existence. Through logical reasoning, it examines creation and the purpose of life, inviting readers to reflect and seek truth with an open mind.
-* [Lumières de vérités (Français - PDF)](https://2ly.link/27oLd): Ce livre explore différentes conceptions du monde et théories sur l'origine de l'univers et la nature de l'existence. Par un raisonnement logique, il invite les lecteurs à réfléchir à la création et au but de la vie, et à chercher la vérité avec un esprit ouvert.
+In the project directory, you can run:
 
-## Write-ups
+* `npm run dev`: Starts the Vite development server with local network access enabled (`--host`).
+* `npm run build`: Bundles the application for production using Vite and runs asset preloading optimization (`scripts/inject-preload.js`).
+* `npm run preview`: Locally previews the production build generated in the `dist` folder.
+* `npm run lint`: Runs ESLint across project files using cached results for speed.
+* `npm run lint:fix`: Runs ESLint and automatically fixes fixable code formatting and linting issues.
+* `npm run validate:html`: Validates all HTML files in the project against `html-validate` rules.
+* `npm run size`: Displays the bundle size of generated assets in `dist/assets`.
+* `npm run ncu`: Upgrades all dependencies in `package.json` to their latest versions via `npm-check-updates`.
 
-* [Test-Driven Development: A Comprehensive Guide](https://github.com/aelassas/tdd)
-* [Functional Programming in TypeScript](https://github.com/aelassas/functional-ts)
-* [Functional Programming in C#](https://github.com/aelassas/functional-cs)
-* [Build Your Own nodemon in a Few Lines of Code](https://github.com/aelassas/watcher)
-* [Microservices using ASP.NET Core, Ocelot, MongoDB and JWT](https://github.com/aelassas/microservices)
+## Project Structure
 
-## Connect
-
-* [GitHub](https://github.com/aelassas)
-* [LinkedIn](https://www.linkedin.com/in/aelassas)
-
-## Contact
-
-If you have any questions about my projects, would like to collaborate, or want to discuss an opportunity, feel free to contact me using the form below.
-
-{% include contact-form.html %}
+```text
+wexdev.com/
+├── public/
+|   └── assets/           # Static assets like images, fonts, etc.
+|   └── locales/          # i18n translation JSON files (en, fr, de, es, pt, it, zh, ja)
+|   └── favicon.ico       # Site favicon
+├── scripts/              # Build post-processing scripts
+├── src/
+│   ├── css/              # Global visual stylesheets & variables
+│   └── js/               # UI handlers, analytics, and i18n module logic
+├── index.html            # Main HTML markup, SEO tags, and JSON-LD schema
+├── vite.config.js        # Vite build & asset optimization settings
+└── package.json          # Project metadata and script definitions
+```
