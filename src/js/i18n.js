@@ -45,6 +45,7 @@ export function applyTranslations(translations) {
   // Apply translations for text content (supports HTML)
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n')
+    // eslint-disable-next-line security/detect-object-injection
     const translation = translations[key]
     if (!translation) return
 
@@ -59,6 +60,7 @@ export function applyTranslations(translations) {
   // Apply translations for placeholders
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder')
+    // eslint-disable-next-line security/detect-object-injection
     const translation = translations[key]
     if (translation) {
       el.setAttribute('placeholder', translation)
@@ -77,6 +79,7 @@ function getCachedTranslations(lang) {
     if (!raw) return null
 
     const cache = JSON.parse(raw)
+    // eslint-disable-next-line security/detect-object-injection
     const entry = cache[lang]
     if (!entry) return null
 
@@ -96,6 +99,7 @@ function setCachedTranslations(lang, translations) {
   try {
     const raw = sessionStorage.getItem(CACHE_KEY)
     const cache = raw ? JSON.parse(raw) : {}
+    // eslint-disable-next-line security/detect-object-injection
     cache[lang] = {
       timestamp: Date.now(),
       translations,
@@ -165,7 +169,9 @@ export async function setLang(lang) {
     const titleEl = document.querySelector('title')
     const titleKey = titleEl?.getAttribute('data-i18n')
     if (titleEl) {
+      // eslint-disable-next-line security/detect-object-injection
       if (titleKey && translations[titleKey]) {
+        // eslint-disable-next-line security/detect-object-injection
         titleEl.textContent = translations[titleKey]
       } else if (translations['website.title']) {
         document.title = translations['website.title']

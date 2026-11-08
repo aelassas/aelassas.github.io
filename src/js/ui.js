@@ -20,7 +20,7 @@ export function initHamburgerMenu() {
 /**
  * Initializes the language selection menu.
  * Toggles the language menu visibility, sets the selected language,
- * and navigates to /?lang=language on selection.
+ * and closes the menu when clicking outside.
  * 
  * @param {function(string): Promise<void>} setLang - Async function to change the app language.
  */
@@ -41,8 +41,7 @@ export function initLanguageMenu(setLang) {
     item.addEventListener('click', async () => {
       const lang = item.getAttribute('data-lang')
       if (lang) {
-        localStorage.setItem('lang', lang)
-        window.location.href = `/?lang=${lang}`
+        await setLang(lang)
       }
       langToggle.setAttribute('aria-expanded', 'false')
       langMenu.hidden = true
