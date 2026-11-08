@@ -448,6 +448,7 @@ main li::marker {
   padding: 1.25rem;
   border: 1px solid var(--glass-border);
   border-radius: var(--radius);
+  opacity: 1;
 }
 
 .contact-form input,
@@ -503,27 +504,27 @@ main li::marker {
   }
 }
 
-main>* {
+.js main>* {
   animation: fade-up 0.35s var(--ease) both;
 }
 
-main> :nth-child(2) {
+.js main> :nth-child(2) {
   animation-delay: 0.03s;
 }
 
-main> :nth-child(3) {
+.js main> :nth-child(3) {
   animation-delay: 0.06s;
 }
 
-main> :nth-child(4) {
+.js main> :nth-child(4) {
   animation-delay: 0.09s;
 }
 
-main> :nth-child(5) {
+.js main> :nth-child(5) {
   animation-delay: 0.12s;
 }
 
-main> :nth-child(n+6) {
+.js main> :nth-child(n+6) {
   animation-delay: 0.15s;
 }
 
