@@ -21,7 +21,7 @@
   "books.light_of_truth": "<a href=\"https://2ly.link/27oLb\">Light of Truth (Anglais - PDF)</a> : This book explores different worldviews and theories about the universe and existence. Through logical reasoning, it examines creation and the purpose of life, inviting readers to reflect and seek truth with an open mind.",
   "books.lumieres_de_verites": "<a href=\"https://2ly.link/27oLd\">Lumières de vérités (Français - PDF)</a> : Ce livre explore différentes conceptions du monde et théories sur l'origine de l'univers et la nature de l'existence. Par un raisonnement logique, il invite les lecteurs à réfléchir à la création et au but de la vie, et à chercher la vérité avec un esprit ouvert.",
   "section.writeups": "Articles",
-  "writeups.tdd": "<a href=\"https://github.com/aelassas/tdd\">Développement Dirigé par les Tests : Un Guide Complet</a>",
+  "writeups.tdd": "<a href=\"https://github.com/aelassas/tdd\">Développement Dirigé par les Tests : Guide Complet</a>",
   "writeups.functional_ts": "<a href=\"https://github.com/aelassas/functional-ts\">Programmation Fonctionnelle en TypeScript</a>",
   "writeups.functional_cs": "<a href=\"https://github.com/aelassas/functional-cs\">Programmation Fonctionnelle en C#</a>",
   "writeups.watcher": "<a href=\"https://github.com/aelassas/watcher\">Créez votre propre nodemon en quelques lignes de code</a>",
