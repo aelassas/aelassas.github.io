@@ -77,33 +77,25 @@ export function initThemeToggle() {
   const themeToggleBtn = document.getElementById('theme-toggle')
   if (!themeToggleBtn) return
 
-  const iconSun = themeToggleBtn.querySelector('.icon-sun')
-  const iconMoon = themeToggleBtn.querySelector('.icon-moon')
+  const themeMeta = document.querySelector('meta[name="theme-color"]')
 
-  function updateToggleIcon(theme) {
-    if (!iconSun || !iconMoon) return
-
-    if (theme === 'dark') {
-      iconSun.style.display = 'block'
-      iconMoon.style.display = 'none'
-      themeToggleBtn.setAttribute('aria-pressed', 'true')
-    } else {
-      iconSun.style.display = 'none'
-      iconMoon.style.display = 'block'
-      themeToggleBtn.setAttribute('aria-pressed', 'false')
+  function updateThemeState(theme) {
+    document.documentElement.setAttribute('data-theme', theme)
+    themeToggleBtn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false')
+    themeToggleBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme')
+    if (themeMeta) {
+      themeMeta.setAttribute('content', theme === 'dark' ? '#0b0b0e' : '#f3f3f4')
     }
   }
 
   const savedTheme = localStorage.getItem('theme') || 'light'
-  document.documentElement.setAttribute('data-theme', savedTheme)
-  updateToggleIcon(savedTheme)
+  updateThemeState(savedTheme)
 
   themeToggleBtn.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme')
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
-    document.documentElement.setAttribute('data-theme', newTheme)
     localStorage.setItem('theme', newTheme)
-    updateToggleIcon(newTheme)
+    updateThemeState(newTheme)
   })
 }
 
