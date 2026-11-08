@@ -12,8 +12,8 @@ Source code for [wexdev.com](https://wexdev.com), the portfolio website of Akram
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/aelassas/wexdev.com.git
-   cd wexdev.com
+   git clone https://github.com/aelassas/aelassas.github.io.git
+   cd aelassas.github.io
    ```
 
 2. **Install dependencies:**
