@@ -1,6 +1,6 @@
 # aelassas.github.io
 
-Source code for [aelassas.github.io](https://aelassas.github.io), the portfolio website of Akram El Assas. Built with Vite, ES Modules, native CSS variables, and modern web standards.
+Source code for [aelassas.github.io](https://aelassas.github.io). Built with Vite, ES Modules, native CSS variables, and modern web standards.
 
 ## Prerequisites
 
