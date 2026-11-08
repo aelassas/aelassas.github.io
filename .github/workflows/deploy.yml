@@ -1,0 +1,76 @@
+# CI/CD Workflow to build and deploy the Servy website to GitHub Pages
+# This workflow utilizes the native Actions deployment (no gh-pages branch required)
+name: deploy
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "public/**"
+      - "src/**"
+      - "index.html"
+      - "vite.config.js"
+      - "package*.json"
+      - ".github/workflows/deploy.yml"
+  # Allows manual triggering from the Actions tab
+  workflow_dispatch:
+
+# Set permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Ensure only one concurrent deployment runs at a time
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
+          # Caching npm dependencies speeds up subsequent runs
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Validate HTML
+        run: npm run validate:html
+        
+      - name: Build
+        # This script handles Vite bundling and custom asset injections
+        run: npm run build
+
+      - name: Check bundle size
+        run: npm run size       
+
+      - name: Upload artifact
+        # Packages the 'dist' folder into a compressed artifact for the deploy job
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    # Sets the environment to 'github-pages' for tracking and protection rules
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        # Takes the artifact from the build job and pushes it to the Pages infrastructure
+        uses: actions/deploy-pages@v5
