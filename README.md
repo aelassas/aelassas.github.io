@@ -1,6 +1,6 @@
-# wexdev.com
+# aelassas.github.io
 
-Source code for [wexdev.com](https://wexdev.com), the portfolio website of Akram El Assas. Built with Vite, ES Modules, native CSS variables, and modern web standards.
+Source code for [aelassas.github.io](https://aelassas.github.io), the portfolio website of Akram El Assas. Built with Vite, ES Modules, native CSS variables, and modern web standards.
 
 ## Prerequisites
 
@@ -38,7 +38,7 @@ In the project directory, you can run:
 ## Project Structure
 
 ```text
-wexdev.com/
+aelassas.github.io/
 ├── public/
 |   └── assets/           # Static assets like images, fonts, etc.
 |   └── locales/          # i18n translation JSON files (en, fr, de, es, pt, it, zh, ja)
