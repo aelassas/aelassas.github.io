@@ -428,7 +428,7 @@ main h2 {
   margin: 2.75rem 0 1rem;
   font-size: 1.5rem;
   letter-spacing: -0.02em;
-  scroll-margin-top: 6rem;
+  scroll-margin-top: 3rem;
 }
 
 main h2::before {

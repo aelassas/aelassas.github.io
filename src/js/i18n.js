@@ -179,13 +179,17 @@ export async function setLang(lang, keepQueryParam = true) {
       }
     }
 
-    // Update URL: keep ?lang=xx if explicit or reloading with it; remove if accessing root site
+    // Only set/update query parameter if keepQueryParam is explicitly true AND a lang param was already present or requested
     const url = new URL(window.location)
-    if (keepQueryParam) {
+    if (keepQueryParam && (url.searchParams.has('lang') || lang !== 'en')) {
       url.searchParams.set('lang', lang)
-    } else {
+    } else if (!url.searchParams.has('lang')) {
       url.searchParams.delete('lang')
     }
+
+    // Remove any hash fragment from the URL when changing language
+    url.hash = ''
+
     window.history.replaceState({}, '', url)
 
     // Visually highlight the selected language in the UI
@@ -222,11 +226,39 @@ export async function loadInitialLanguage() {
   document.documentElement.removeAttribute('data-loading')
 }
 
-// Listen for browser back/forward buttons to reflect URL ?lang=xx state
+// Listen for browser back/forward buttons or hash changes to reflect language state
 window.addEventListener('popstate', () => {
   const params = new URLSearchParams(window.location.search)
-  const urlLang = params.get('lang') || 'en'
-  if (supportedLangs.includes(urlLang)) {
-    setLang(urlLang)
-  }
+  const urlLang = params.get('lang')
+  const storedLang = localStorage.getItem('lang')
+
+  const lang = supportedLangs.includes(urlLang)
+    ? urlLang
+    : supportedLangs.includes(storedLang)
+      ? storedLang
+      : 'en'
+
+  setLang(lang, supportedLangs.includes(urlLang))
+})
+
+// Intercept nav anchor link clicks to scroll smoothly without resetting language
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    const targetId = anchor.getAttribute('href')
+    if (targetId === '#') return
+
+    const targetElem = document.querySelector(targetId)
+    if (targetElem) {
+      e.preventDefault()
+
+      // Smooth scroll to target
+      targetElem.scrollIntoView({ behavior: 'smooth' })
+
+      // Properly construct URL with query params BEFORE hash
+      const url = new URL(window.location.href)
+      url.hash = targetId
+
+      window.history.pushState({}, '', url)
+    }
+  })
 })
