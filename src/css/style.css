@@ -459,6 +459,31 @@ main li::marker {
   color: var(--text-muted);
 }
 
+/* Acknowledgments Logos */
+.acknowledgments-logos {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.acknowledgments-logos .logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.acknowledgments-logos .logo-link:hover {
+  opacity: 0.95;
+}
+
+.acknowledgments-logos img {
+  display: block;
+  object-fit: contain;
+}
+
 /* Formspree Contact Form */
 .contact-form {
   display: grid;
