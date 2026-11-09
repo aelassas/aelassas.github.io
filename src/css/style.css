@@ -475,10 +475,6 @@ main li::marker {
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.acknowledgments-logos .logo-link:hover {
-  opacity: 0.95;
-}
-
 .acknowledgments-logos img {
   display: block;
   object-fit: contain;
