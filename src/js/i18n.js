@@ -179,11 +179,11 @@ export async function setLang(lang, keepQueryParam = true) {
       }
     }
 
-    // Only set/update query parameter if keepQueryParam is explicitly true AND a lang param was already present or requested
+    // Update URL query parameter if requested
     const url = new URL(window.location)
-    if (keepQueryParam && (url.searchParams.has('lang') || lang !== 'en')) {
+    if (keepQueryParam) {
       url.searchParams.set('lang', lang)
-    } else if (!url.searchParams.has('lang')) {
+    } else {
       url.searchParams.delete('lang')
     }
 
