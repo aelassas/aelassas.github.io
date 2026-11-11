@@ -7,7 +7,7 @@
   "nav.contact": "Contact",
   "main.title": "Senior Software Engineer",
   "main.lead": "Building and maintaining open-source software.",
-  "section.projects": "Open-Source Projects",
+  "section.projects": "Projects",
   "projects.intro": "I am the creator and maintainer of the following open-source projects:",
   "projects.servy": "Enterprise-Grade Windows Service Wrapper",
   "projects.wexflow": "Workflow Automation Engine",
