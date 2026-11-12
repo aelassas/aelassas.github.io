@@ -135,7 +135,7 @@ function highlightSelectedLang(lang) {
 /**
  * Changes the website language to the specified `lang`,
  * fetches corresponding translation JSON,
- * applies translations, updates page title and URL,
+ * applies translations, updates page title, canonical link, and URL,
  * and highlights the selected language button.
  *
  * @param {string} lang - Language code to switch to.
@@ -179,6 +179,12 @@ export async function setLang(lang, keepQueryParam = true) {
       }
     }
 
+    // Update <meta name="description"> content for localized SEO indexing
+    const metaDesc = document.querySelector('meta[name="description"]')
+    if (metaDesc && translations['website.description']) {
+      metaDesc.setAttribute('content', translations['website.description'])
+    }
+
     // Update URL query parameter if requested
     const url = new URL(window.location)
     if (keepQueryParam) {
@@ -191,6 +197,15 @@ export async function setLang(lang, keepQueryParam = true) {
     url.hash = ''
 
     window.history.replaceState({}, '', url)
+
+    // Update <link rel="canonical"> so each language variant is self-canonicalized for indexing
+    const canonicalEl = document.querySelector('link[rel="canonical"]')
+    if (canonicalEl) {
+      const canonicalUrl = keepQueryParam
+        ? `https://wexdev.com/?lang=${lang}`
+        : 'https://wexdev.com/'
+      canonicalEl.setAttribute('href', canonicalUrl)
+    }
 
     // Visually highlight the selected language in the UI
     highlightSelectedLang(lang)
