@@ -9,11 +9,28 @@ export function initHamburgerMenu() {
 
   if (!hamburger || !nav) return
 
+  const closeMenu = () => {
+    hamburger.setAttribute('aria-expanded', 'false')
+    hamburger.classList.remove('active')
+    nav.classList.remove('active')
+    nav.classList.toggle('is-open', false)
+  }
+
   hamburger.addEventListener('click', () => {
     const expanded = hamburger.getAttribute('aria-expanded') === 'true'
     hamburger.setAttribute('aria-expanded', !expanded)
     hamburger.classList.toggle('active')
+    nav.classList.toggle('active')
     nav.classList.toggle('is-open', !expanded)
+  })
+
+  // Close menu when clicking any navigation link
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (nav.classList.contains('active')) {
+        closeMenu()
+      }
+    })
   })
 }
 

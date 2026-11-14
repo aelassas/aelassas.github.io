@@ -661,6 +661,11 @@ main li::marker {
   .container {
     padding-top: 1.5rem;
   }
+
+  main h2 {
+    scroll-margin-top: 15rem;
+  }
+
 }
 
 @media (prefers-reduced-motion: reduce) {
