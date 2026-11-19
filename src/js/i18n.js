@@ -133,30 +133,6 @@ function highlightSelectedLang(lang) {
 }
 
 /**
- * Updates internal navigation links to preserve or omit `?lang=` consistently across pages.
- *
- * @param {string} lang - Active language code.
- * @param {boolean} keepQueryParam - Whether to keep `?lang=xx` in internal links.
- */
-function updateInternalLinks(lang, keepQueryParam) {
-  document.querySelectorAll('a[href^="/"]').forEach(anchor => {
-    const href = anchor.getAttribute('href')
-    if (!href) return
-
-    const linkUrl = new URL(href, window.location.origin)
-    if (linkUrl.origin !== window.location.origin) return
-
-    if (keepQueryParam) {
-      linkUrl.searchParams.set('lang', lang)
-    } else {
-      linkUrl.searchParams.delete('lang')
-    }
-
-    anchor.setAttribute('href', `${linkUrl.pathname}${linkUrl.search}${linkUrl.hash}`)
-  })
-}
-
-/**
  * Changes the website language to the specified `lang`,
  * fetches corresponding translation JSON,
  * applies translations, updates page title, canonical link, and URL,
@@ -237,9 +213,6 @@ export async function setLang(lang, keepQueryParam = true) {
         : pageUrl
       canonicalEl.setAttribute('href', canonicalUrl)
     }
-
-    // Propagate language query parameter state to internal page links
-    updateInternalLinks(lang, keepQueryParam)
 
     // Visually highlight the selected language in the UI
     highlightSelectedLang(lang)
