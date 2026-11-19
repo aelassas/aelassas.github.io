@@ -63,7 +63,7 @@
   --bg-glow-1: rgba(200, 200, 210, 0.08);
   --bg-glow-2: rgba(160, 160, 170, 0.06);
   --text: #bcbfc8;
-  --heading: #f7f7f9;
+  --heading: #d7d7d9;
   --text-muted: #8e92a0;
   --accent: #4da3ff;
   --accent-contrast: #0b0b0e;
@@ -78,7 +78,7 @@
   --header-highlight: rgba(255, 255, 255, 0.08);
   --header-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.4);
   --accent-tint: rgba(77, 163, 255, 0.16);
-  --h1-from: rgb(255, 255, 255);
+  --h1-from: rgb(225, 225, 225);
   --h1-to: rgba(255, 255, 255, 0.78);
   --focus-ring: rgba(77, 163, 255, 0.4);
   --btn-bg: #2d2e37;
@@ -464,7 +464,7 @@ main p {
 /* Footer */
 .site-footer {
   flex-shrink: 0;
-  background: var(--glass);
+  /* background: var(--glass); */
   border-top: 1px solid var(--glass-border);
 }
 
