@@ -1,4 +1,5 @@
 {
+  "nav.home": "首页",
   "nav.projects": "项目",
   "nav.books": "著作",
   "nav.writeups": "技术文章",
@@ -40,5 +41,7 @@
   "footer.back_to_top": "返回顶部",
   "website.title": "Akram El Assas - 高级软件工程师",
   "website.description": "Akram El Assas - 高级软件工程师。Servy、Wexflow、BookCars、Movin' In 与 wexCommerce 的开发者。",
-  "skip.link": "跳转至主要内容"
+  "skip.link": "跳转至主要内容",
+  "contact.title": "联系方式 - Akram El Assas",
+  "contact.description": "联系 Akram El Assas - 高级软件工程师。如有关于项目的问题、合作意向或工作机会，欢迎随时联系。"
 }

@@ -6,7 +6,6 @@ import {
   initThemeToggle,
   updateFooterYear
 } from './utils.js'
-import '../css/style.css'
 
 // Wait for DOM to be fully loaded before initializing the app
 window.addEventListener('DOMContentLoaded', async () => {

@@ -133,6 +133,30 @@ function highlightSelectedLang(lang) {
 }
 
 /**
+ * Updates internal navigation links to preserve or omit `?lang=` consistently across pages.
+ *
+ * @param {string} lang - Active language code.
+ * @param {boolean} keepQueryParam - Whether to keep `?lang=xx` in internal links.
+ */
+function updateInternalLinks(lang, keepQueryParam) {
+  document.querySelectorAll('a[href^="/"]').forEach(anchor => {
+    const href = anchor.getAttribute('href')
+    if (!href) return
+
+    const linkUrl = new URL(href, window.location.origin)
+    if (linkUrl.origin !== window.location.origin) return
+
+    if (keepQueryParam) {
+      linkUrl.searchParams.set('lang', lang)
+    } else {
+      linkUrl.searchParams.delete('lang')
+    }
+
+    anchor.setAttribute('href', `${linkUrl.pathname}${linkUrl.search}${linkUrl.hash}`)
+  })
+}
+
+/**
  * Changes the website language to the specified `lang`,
  * fetches corresponding translation JSON,
  * applies translations, updates page title, canonical link, and URL,
@@ -181,8 +205,11 @@ export async function setLang(lang, keepQueryParam = true) {
 
     // Update <meta name="description"> content for localized SEO indexing
     const metaDesc = document.querySelector('meta[name="description"]')
-    if (metaDesc && translations['website.description']) {
-      metaDesc.setAttribute('content', translations['website.description'])
+    const descKey = metaDesc?.getAttribute('data-i18n-content') || 'website.description'
+    // eslint-disable-next-line security/detect-object-injection
+    if (metaDesc && translations[descKey]) {
+      // eslint-disable-next-line security/detect-object-injection
+      metaDesc.setAttribute('content', translations[descKey])
     }
 
     // Update URL query parameter if requested
@@ -201,11 +228,18 @@ export async function setLang(lang, keepQueryParam = true) {
     // Update <link rel="canonical"> so each language variant is self-canonicalized for indexing
     const canonicalEl = document.querySelector('link[rel="canonical"]')
     if (canonicalEl) {
+      const pathname = window.location.pathname.endsWith('/')
+        ? window.location.pathname
+        : `${window.location.pathname}/`
+      const pageUrl = `https://wexdev.com${pathname}`
       const canonicalUrl = keepQueryParam
-        ? `https://wexdev.com/?lang=${lang}`
-        : 'https://wexdev.com/'
+        ? `${pageUrl}?lang=${lang}`
+        : pageUrl
       canonicalEl.setAttribute('href', canonicalUrl)
     }
+
+    // Propagate language query parameter state to internal page links
+    updateInternalLinks(lang, keepQueryParam)
 
     // Visually highlight the selected language in the UI
     highlightSelectedLang(lang)

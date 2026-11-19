@@ -1,4 +1,5 @@
 {
+  "nav.home": "Accueil",
   "nav.projects": "Projets",
   "nav.books": "Livres",
   "nav.writeups": "Articles",
@@ -40,5 +41,7 @@
   "footer.back_to_top": "Retour en haut",
   "website.title": "Akram El Assas - Ingénieur Logiciel Senior",
   "website.description": "Akram El Assas - Ingénieur Logiciel Senior. Créateur de Servy, Wexflow, BookCars, Movin' In et wexCommerce.",
-  "skip.link": "Aller au contenu principal"
+  "skip.link": "Aller au contenu principal",
+  "contact.title": "Contact - Akram El Assas",
+  "contact.description": "Contactez Akram El Assas - Ingénieur Logiciel Senior. Écrivez-moi pour toute question sur mes projets, une collaboration ou une opportunité."
 }

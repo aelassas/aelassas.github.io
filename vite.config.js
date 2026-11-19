@@ -117,6 +117,7 @@ export default defineConfig({
     rolldownOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        contact: resolve(__dirname, 'contact/index.html'),
       },
     },
   },

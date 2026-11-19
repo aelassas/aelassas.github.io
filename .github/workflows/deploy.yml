@@ -9,6 +9,7 @@ on:
       - "public/**"
       - "src/**"
       - "index.html"
+      - "contact/index.html"
       - "vite.config.js"
       - "package*.json"
       - ".github/workflows/deploy.yml"

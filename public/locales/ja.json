@@ -1,4 +1,5 @@
 {
+  "nav.home": "ホーム",
   "nav.projects": "プロジェクト",
   "nav.books": "書籍",
   "nav.writeups": "記事",
@@ -40,5 +41,7 @@
   "footer.back_to_top": "トップへ戻る",
   "website.title": "Akram El Assas - シニア ソフトウェア エンジニア",
   "website.description": "Akram El Assas - シニア ソフトウェア エンジニア。Servy、Wexflow、BookCars、Movin' In、wexCommerce の開発者。",
-  "skip.link": "コンテンツへスキップ"
+  "skip.link": "コンテンツへスキップ",
+  "contact.title": "お問い合わせ - Akram El Assas",
+  "contact.description": "Akram El Assas（シニア ソフトウェア エンジニア）へのお問い合わせ。プロジェクトに関するご質問、コラボレーション、お仕事のご相談はこちらからご連絡ください。"
 }

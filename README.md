@@ -27,7 +27,7 @@ Source code for [aelassas.github.io](https://aelassas.github.io). Built with Vit
 In the project directory, you can run:
 
 * `npm run dev`: Starts the Vite development server with local network access enabled (`--host`).
-* `npm run build`: Bundles the application for production using Vite and runs asset preloading optimization (`scripts/inject-preload.js`).
+* `npm run build`: Bundles the application for production using Vite and runs asset preloading optimization.
 * `npm run preview`: Locally previews the production build generated in the `dist` folder.
 * `npm run lint`: Runs ESLint across project files using cached results for speed.
 * `npm run lint:fix`: Runs ESLint and automatically fixes fixable code formatting and linting issues.
@@ -39,15 +39,21 @@ In the project directory, you can run:
 
 ```text
 aelassas.github.io/
+├── contact/
+│   └── index.html        # Contact page HTML markup, SEO tags, and JSON-LD schema
 ├── public/
-|   └── assets/           # Static assets like images, fonts, etc.
-|   └── locales/          # i18n translation JSON files (en, fr, de, es, pt, it, zh, ja)
-|   └── favicon.ico       # Site favicon
+│   ├── assets/           # Static assets (images, self-hosted fonts)
+│   ├── locales/          # i18n translation JSON files (en, fr, de, es, pt, it, zh, ja)
+│   ├── site.webmanifest  # Web app manifest
+│   └── sitemap.xml       # Multilingual XML sitemap
 ├── scripts/              # Build post-processing scripts
 ├── src/
-│   ├── css/              # Global visual stylesheets & variables
+│   ├── css/
+│   │   ├── base.css      # Shared layout, theme variables, header, and footer styles
+│   │   ├── home.css      # Home page specific styles
+│   │   └── contact.css   # Contact page form styles
 │   └── js/               # UI handlers, analytics, and i18n module logic
-├── index.html            # Main HTML markup, SEO tags, and JSON-LD schema
-├── vite.config.js        # Vite build & asset optimization settings
+├── index.html            # Home page HTML markup, SEO tags, and JSON-LD schema
+├── vite.config.js        # Vite multi-page build & asset optimization settings
 └── package.json          # Project metadata and script definitions
 ```
