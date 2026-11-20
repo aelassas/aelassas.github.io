@@ -1,0 +1,27 @@
+# Akram El Assas
+
+> Senior Software Engineer. Creator and maintainer of open-source software across .NET, C#, PowerShell, Node.js, TypeScript, React, and React Native.
+
+## Pages
+
+- [Home](https://wexdev.com/): Overview, open-source projects, books, and acknowledgments.
+- [Contact](https://wexdev.com/contact/): Contact details and direct inquiries.
+
+## Open-Source Projects
+
+- [Servy](https://servy-win.github.io/): Enterprise-grade Windows service wrapper.
+- [Wexflow](https://wexflow.github.io/): Workflow automation engine.
+- [BookCars](https://bookcars.github.io/): Car rental platform with mobile app.
+- [Movin' In](https://movin-in.github.io/): Rental property management platform with mobile app.
+- [wexCommerce](https://wexcommerce.github.io/): Single-vendor marketplace.
+
+## Books
+
+- [Light of Truth (English - PDF)](https://2ly.link/27oLb): Explores worldviews and theories about the universe and existence through logical reasoning.
+- [Lumières de vérités (Français - PDF)](https://2ly.link/27oLd): Explore différentes conceptions du monde et théories sur l'origine de l'univers et la nature de l'existence.
+
+## Links
+
+- [GitHub](https://github.com/aelassas)
+- [LinkedIn](https://www.linkedin.com/in/aelassas)
+- [Keybase](https://keybase.io/aelassas)
