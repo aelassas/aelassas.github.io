@@ -36,12 +36,12 @@ export function initHamburgerMenu() {
 
 /**
  * Initializes the language selection menu.
- * Toggles the language menu visibility, sets the selected language,
+ * Toggles the language menu visibility, reloads the page with the selected language,
  * handles click-outside, and closes on Escape key press.
- * 
- * @param {function(string, boolean=): Promise<void>} setLang - Async function to change the app language.
+ *
+ * @param {function(string): void} switchLang - Function to persist and reload into the selected language.
  */
-export function initLanguageMenu(setLang) {
+export function initLanguageMenu(switchLang) {
   const langToggle = document.getElementById('lang-toggle')
   const langMenu = document.getElementById('lang-menu')
 
@@ -59,12 +59,13 @@ export function initLanguageMenu(setLang) {
   })
 
   langMenu.querySelectorAll('button').forEach(item => {
-    item.addEventListener('click', async () => {
+    item.addEventListener('click', () => {
       const lang = item.getAttribute('data-lang')
-      if (lang) {
-        await setLang(lang, true)
-      }
       closeMenu()
+      if (lang && lang !== window.currentLang) {
+        switchLang(lang) // reloads the page with the selected language
+        // await setLang(lang, true) // no reload
+      }
     })
   })
 

@@ -1,5 +1,5 @@
 import { initGA } from './ga.js'
-import { loadInitialLanguage, setLang } from './i18n.js'
+import { loadInitialLanguage, switchLang } from './i18n.js'
 import {
   initHamburgerMenu,
   initLanguageMenu,
@@ -18,7 +18,8 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     // Initialize UI components
     initHamburgerMenu()        // Mobile nav toggle
-    initLanguageMenu(setLang)  // Language dropdown logic
+    initLanguageMenu(switchLang)  // Language dropdown logic
+    // initLanguageMenu(setLang)  // Language dropdown logic, no reload
     initThemeToggle()          // Light/dark mode toggle
     updateFooterYear()         // Set current year in footer
   } catch (err) {

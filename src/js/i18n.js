@@ -3,7 +3,7 @@
  *
  * @type {string}
  */
-const base = import.meta.env.BASE_URL || '/'
+const base = import.meta.env?.BASE_URL || '/'
 
 /**
  * Current language code used on the website.
@@ -30,6 +30,30 @@ const CACHE_KEY = 'i18n-cache'
  * @type {number}
  */
 const CACHE_TTL = 10 * 60 * 1000
+
+/**
+ * Safely reads the stored language preference from localStorage.
+ * @returns {string|null}
+ */
+function getStoredLang() {
+  try {
+    return localStorage.getItem('lang')
+  } catch {
+    return null
+  }
+}
+
+/**
+ * Safely stores the selected language preference in localStorage.
+ * @param {string} lang
+ */
+function storeLang(lang) {
+  try {
+    localStorage.setItem('lang', lang)
+  } catch {
+    // Storage may be unavailable in privacy-restricted browsing contexts.
+  }
+}
 
 /**
  * Applies the given translations to all elements with
@@ -114,7 +138,11 @@ function setCachedTranslations(lang, translations) {
  * Clear i18n cache on page unload.
  */
 window.addEventListener('beforeunload', () => {
-  sessionStorage.removeItem(CACHE_KEY)
+  try {
+    sessionStorage.removeItem(CACHE_KEY)
+  } catch {
+    // Ignore storage errors on unload
+  }
 })
 
 /**
@@ -143,28 +171,30 @@ function highlightSelectedLang(lang) {
  * @returns {Promise<void>}
  */
 export async function setLang(lang, keepQueryParam = true) {
+  const targetLang = supportedLangs.includes(lang) ? lang : 'en'
+
   try {
     // Persist selected language in local storage
-    localStorage.setItem('lang', lang)
+    storeLang(targetLang)
 
     // Update the document's <html lang="..."> attribute
-    document.documentElement.lang = lang
+    document.documentElement.lang = targetLang
 
     // Load translations from cache or fetch from server
-    let translations = getCachedTranslations(lang)
+    let translations = getCachedTranslations(targetLang)
 
     if (!translations) {
-      const res = await fetch(`${base}locales/${lang}.json`)
+      const res = await fetch(`${base}locales/${targetLang}.json`)
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       translations = await res.json()
-      setCachedTranslations(lang, translations)
+      setCachedTranslations(targetLang, translations)
     }
 
     // Apply translations to the current page
     applyTranslations(translations)
 
     // Store current language globally
-    window.currentLang = lang
+    window.currentLang = targetLang
 
     // Set the document <title> using i18n key if available
     const titleEl = document.querySelector('title')
@@ -189,9 +219,9 @@ export async function setLang(lang, keepQueryParam = true) {
     }
 
     // Update URL query parameter if requested
-    const url = new URL(window.location)
+    const url = new URL(window.location.href)
     if (keepQueryParam) {
-      url.searchParams.set('lang', lang)
+      url.searchParams.set('lang', targetLang)
     } else {
       url.searchParams.delete('lang')
     }
@@ -209,16 +239,42 @@ export async function setLang(lang, keepQueryParam = true) {
         : `${window.location.pathname}/`
       const pageUrl = `https://wexdev.com${pathname}`
       const canonicalUrl = keepQueryParam
-        ? `${pageUrl}?lang=${lang}`
+        ? `${pageUrl}?lang=${targetLang}`
         : pageUrl
       canonicalEl.setAttribute('href', canonicalUrl)
     }
 
     // Visually highlight the selected language in the UI
-    highlightSelectedLang(lang)
+    highlightSelectedLang(targetLang)
   } catch (err) {
-    console.error(`Failed to load ${lang} translations:`, err)
+    console.error(`Failed to load ${targetLang} translations:`, err)
   }
+}
+
+/**
+ * Wrapper around window.location.assign for testability in jsdom.
+ * @type {{ assign: (url: string) => void }}
+ */
+export const navigation = {
+  assign: (url) => window.location.assign(url),
+}
+
+/**
+ * Persists the selected language and reloads the page with `?lang=<targetLang>`
+ * so Google Analytics registers a distinct pageview for the new language.
+ *
+ * @param {string} lang - Language code to switch to.
+ * @returns {void}
+ */
+export function switchLang(lang) {
+  const targetLang = supportedLangs.includes(lang) ? lang : 'en'
+  storeLang(targetLang)
+
+  const url = new URL(window.location.href)
+  url.searchParams.set('lang', targetLang)
+  url.hash = ''
+
+  navigation.assign(url.toString())
 }
 
 /**
@@ -231,28 +287,30 @@ export async function setLang(lang, keepQueryParam = true) {
 export async function loadInitialLanguage() {
   document.documentElement.setAttribute('data-loading', '')
 
-  const params = new URLSearchParams(window.location.search)
-  const urlLang = params.get('lang')
-  const storedLang = localStorage.getItem('lang')
+  try {
+    const params = new URLSearchParams(window.location.search)
+    const urlLang = params.get('lang')
+    const storedLang = getStoredLang()
 
-  const hasUrlLang = supportedLangs.includes(urlLang)
-  const lang = hasUrlLang
-    ? urlLang
-    : supportedLangs.includes(storedLang)
-      ? storedLang
-      : 'en'
+    const hasUrlLang = supportedLangs.includes(urlLang)
+    const lang = hasUrlLang
+      ? urlLang
+      : supportedLangs.includes(storedLang)
+        ? storedLang
+        : 'en'
 
-  // Keep ?lang in URL if present in request, otherwise keep clean
-  await setLang(lang, hasUrlLang)
-
-  document.documentElement.removeAttribute('data-loading')
+    // Keep ?lang in URL if present in request, otherwise keep clean
+    await setLang(lang, hasUrlLang)
+  } finally {
+    document.documentElement.removeAttribute('data-loading')
+  }
 }
 
 // Listen for browser back/forward buttons or hash changes to reflect language state
 window.addEventListener('popstate', () => {
   const params = new URLSearchParams(window.location.search)
   const urlLang = params.get('lang')
-  const storedLang = localStorage.getItem('lang')
+  const storedLang = getStoredLang()
 
   const lang = supportedLangs.includes(urlLang)
     ? urlLang
