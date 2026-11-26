@@ -58,30 +58,6 @@
     })();
   </script>
 
-  <style>
-    html[data-loading] body {
-      visibility: hidden;
-    }
-  </style>
-  <script>
-    (function () {
-      const supported = ['en', 'fr', 'de', 'es', 'pt', 'it', 'zh', 'ja']
-      const urlLang = new URLSearchParams(window.location.search).get('lang')
-      let storedLang = null
-      try {
-        storedLang = localStorage.getItem('lang')
-      } catch { }
-      const lang = supported.includes(urlLang)
-        ? urlLang
-        : supported.includes(storedLang)
-          ? storedLang
-          : 'en'
-      if (lang !== 'en') {
-        document.documentElement.setAttribute('data-loading', '')
-      }
-    })()
-  </script>
-
   <link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/src/css/base.css">
   <link rel="stylesheet" href="/src/css/contact.css">
