@@ -43,7 +43,7 @@ aelassas.github.io/
 │   └── index.html        # Contact page HTML markup, SEO tags, and JSON-LD schema
 ├── public/
 │   ├── assets/           # Static assets (images, self-hosted fonts)
-│   ├── locales/          # i18n translation JSON files (en, fr, de, es, pt, it, zh, ja)
+│   ├── locales/          # i18n translation JSON files (en, fr, de, es, pt-br, pt-pt, it, zh, ja, ko, ru)
 │   ├── site.webmanifest  # Web app manifest
 │   └── sitemap.xml       # Multilingual XML sitemap
 ├── scripts/              # Build post-processing scripts

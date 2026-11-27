@@ -352,6 +352,7 @@ a:hover {
   background: transparent;
   border: none;
   text-align: left;
+  white-space: nowrap;
   cursor: pointer;
   transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
 }

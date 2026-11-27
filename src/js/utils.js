@@ -18,6 +18,14 @@ export function initHamburgerMenu() {
 
   hamburger.addEventListener('click', () => {
     const expanded = hamburger.getAttribute('aria-expanded') === 'true'
+    if (!expanded) {
+      const langToggle = document.getElementById('lang-toggle')
+      const langMenu = document.getElementById('lang-menu')
+      if (langToggle && langMenu) {
+        langToggle.setAttribute('aria-expanded', 'false')
+        langMenu.hidden = true
+      }
+    }
     hamburger.setAttribute('aria-expanded', !expanded)
     hamburger.classList.toggle('active')
     nav.classList.toggle('active')
