@@ -19,7 +19,7 @@ const i18nHeadPlugin = () => ({
       {
         tag: 'script',
         children: `(function () {
-  const supported = ['en', 'fr', 'de', 'es', 'pt-br', 'pt-pt', 'it', 'zh', 'ja', 'ko', 'ru'];
+  const supported = ['en', 'fr', 'de', 'es', 'pt-br', 'pt-pt', 'it', 'zh', 'ja', 'ko'];
   const urlLang = new URLSearchParams(window.location.search).get('lang');
   let storedLang = null;
   try { storedLang = localStorage.getItem('lang'); } catch {}
