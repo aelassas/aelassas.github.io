@@ -18,20 +18,6 @@ window.currentLang = 'en'
 export const supportedLangs = ['en', 'fr', 'de', 'es', 'pt-br', 'pt-pt', 'it', 'zh', 'ja', 'ko']
 
 /**
- * The key used to store language translations in sessionStorage.
- * @type {string}
- */
-const CACHE_KEY = 'i18n-cache'
-
-/**
- * Time-to-live (TTL) for cached translations in milliseconds.
- * After this duration, the cached translations are considered stale.
- * Currently set to 10 minutes.
- * @type {number}
- */
-const CACHE_TTL = 10 * 60 * 1000
-
-/**
  * Safely reads the stored language preference from localStorage.
  * @returns {string|null}
  */
@@ -93,59 +79,6 @@ export function applyTranslations(translations) {
 }
 
 /**
- * Get translations from cache (if valid).
- * @param {string} lang
- * @returns {Object|null}
- */
-function getCachedTranslations(lang) {
-  try {
-    const raw = sessionStorage.getItem(CACHE_KEY)
-    if (!raw) return null
-
-    const cache = JSON.parse(raw)
-    // eslint-disable-next-line security/detect-object-injection
-    const entry = cache[lang]
-    if (!entry) return null
-
-    if (Date.now() - entry.timestamp > CACHE_TTL) return null
-    return entry.translations
-  } catch {
-    return null
-  }
-}
-
-/**
- * Store translations in sessionStorage cache.
- * @param {string} lang
- * @param {Object} translations
- */
-function setCachedTranslations(lang, translations) {
-  try {
-    const raw = sessionStorage.getItem(CACHE_KEY)
-    const cache = raw ? JSON.parse(raw) : {}
-    // eslint-disable-next-line security/detect-object-injection
-    cache[lang] = {
-      timestamp: Date.now(),
-      translations,
-    }
-    sessionStorage.setItem(CACHE_KEY, JSON.stringify(cache))
-  } catch (err) {
-    console.warn(`Failed to cache translations for "${lang}":`, err)
-  }
-}
-
-/**
- * Clear i18n cache on page unload.
- */
-// window.addEventListener('beforeunload', () => {
-//   try {
-//     sessionStorage.removeItem(CACHE_KEY)
-//   } catch {
-//     // Ignore storage errors on unload
-//   }
-// })
-
-/**
  * Highlights the currently selected language button by
  * setting the `data-selected` attribute.
  *
@@ -180,15 +113,10 @@ export async function setLang(lang, keepQueryParam = true) {
     // Update the document's <html lang="..."> attribute
     document.documentElement.lang = targetLang
 
-    // Load translations from cache or fetch from server
-    let translations = getCachedTranslations(targetLang)
-
-    if (!translations) {
-      const res = await fetch(`${base}locales/${targetLang}.json`)
-      if (!res.ok) throw new Error(`HTTP ${res.status}`)
-      translations = await res.json()
-      setCachedTranslations(targetLang, translations)
-    }
+    // Fetch translations from server
+    const res = await fetch(`${base}locales/${targetLang}.json`)
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    const translations = await res.json()
 
     // Apply translations to the current page
     applyTranslations(translations)
